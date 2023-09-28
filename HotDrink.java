@@ -1,30 +1,31 @@
-public class HotDrink {
+public class HotDrink extends Drink {
 
-    
-    protected String name;
-    protected int coast;
+    private int temperature;
 
-    // public HotDrink(String name, int coast) {
-    //     String namString;
-    //     int coasti;
-    // }
+    public HotDrink(String drinkName, int value, int temperature) {
+        super(drinkName, value);
+        this.temperature = temperature;
+    }
 
-    public String getName() {
-        return name;
+    public int getTemperature() {
+        return temperature;
     }
-    public void setName(String name) {
-        this.name = name;
+
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
     }
-    public int getCoast() {
-        return coast;
-    }
-    public void setCoast(int coast) {
-        this.coast = coast;
-    }
+
     @Override
     public String toString() {
-        return "HotDrink [name=" + name + ", coast=" + coast + "]";
+        return String.format("Напиток " + drinkName + " объём " + value +  " темпиратура " + temperature);
     }
 
     
-}
+
+   
+
+    }
+    
+
+      
+

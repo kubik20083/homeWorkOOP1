@@ -9,12 +9,6 @@ public class Main {
 4. Всё вышеуказанное создать согласно принципам ООП, пройденным на семинаре */
 
 public static void main(String[] args) {
-    HotDrink cofe = new HotDrink();
-    cofe.name = "arabic";
-    cofe.setCoast(12);
-
-    System.out.println(cofe.name);
-    System.out.println(cofe.getName());
-    System.out.println(cofe);
-}
+   System.out.println("---,");
+    }
 }
