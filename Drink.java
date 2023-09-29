@@ -29,5 +29,4 @@ public class Drink {
         return "Drink [drinkName=" + drinkName + ", value=" + value + "]";
     }
 
-    
 }

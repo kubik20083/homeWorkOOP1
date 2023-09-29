@@ -15,13 +15,12 @@ public class HotDrinkVendMaschine implements Vendingmachine {
 
     @Override
     public void getProduct(HotDrink drink) {
-       for(Object drinks:list) {
-        if(drink.equals(drink)){
-            System.out.println(drink.toString());
-        }
+        for (Object drinks : list) {
+            if (drink.equals(drink)) {
+                System.out.println(drink.toString());
+            }
 
-       }
+        }
     }
-    
-    
+
 }

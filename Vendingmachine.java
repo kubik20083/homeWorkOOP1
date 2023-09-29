@@ -1,5 +1,5 @@
 public interface Vendingmachine {
-    
-    void getProduct(HotDrink drink);    
+
+    void getProduct(HotDrink drink);
 
 }

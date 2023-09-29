@@ -17,15 +17,7 @@ public class HotDrink extends Drink {
 
     @Override
     public String toString() {
-        return String.format("Напиток " + drinkName + " объём " + value +  " темпиратура " + temperature);
+        return String.format("Напиток " + drinkName + " объём " + value + " темпиратура " + temperature);
     }
 
-    
-
-   
-
-    }
-    
-
-      
-
+}
