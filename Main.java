@@ -1,34 +1,57 @@
-/**
- * Main
- */
+import data.Authomat;
+import data.Group;
+import data.HotDrinks;
+import view.View;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
-
-    /*
-     * 1. Создать наследника реализованного класса ГорячийНапиток с дополнительным
-     * полем int температура.
-     * 2. Создать класс ГорячихНапитковАвтомат реализующий интерфейс ТорговыйАвтомат
-     * и реализовать перегруженный метод getProduct(int name, int volume, int
-     * temperature), выдающий продукт соответствующий имени, объёму и температуре
-     * 3. В main проинициализировать несколько ГорячихНапитков и
-     * ГорячихНапитковАвтомат и воспроизвести логику, заложенную в программе
-     * 4. Всё вышеуказанное создать согласно принципам ООП, пройденным на семинаре
-     */
-
     public static void main(String[] args) {
+        View view = new View();
 
-        Drink cappuccino = new HotDrink("cappuccino", 100, 60);
-        Drink americano = new HotDrink("americano", 200, 90);
-        Drink latte = new HotDrink("latte", 200, 70);
+        HotDrinks hotDrinks1 = new HotDrinks("шоколад", 150, 450, 80, 1);
+        HotDrinks hotDrinks2 = new HotDrinks("шоколад", 100, 300, 80, 2);
+        HotDrinks hotDrinks3 = new HotDrinks("шоколад", 70, 250, 80, 3);
+        HotDrinks hotDrinks4 = new HotDrinks("кофе", 150, 450, 90, 4);
+        HotDrinks hotDrinks5 = new HotDrinks("кофе", 100, 300, 60, 5);
+        HotDrinks hotDrinks6 = new HotDrinks("кофе", 70, 250, 50, 6);
+        HotDrinks hotDrinks7 = new HotDrinks("чай", 150, 450, 60, 7);
+        HotDrinks hotDrinks8 = new HotDrinks("чай", 100, 300, 60, 8);
+        HotDrinks hotDrinks9 = new HotDrinks("чай", 70, 250, 50, 9);
 
-        HotDrinkVendMaschine maschine = new HotDrinkVendMaschine();
+        Authomat Drinks = new Authomat();
+        List<HotDrinks> hotDrinksList = new ArrayList<>(List.of(hotDrinks1, hotDrinks2, hotDrinks3, hotDrinks4 ,hotDrinks5 ,hotDrinks6, hotDrinks7, hotDrinks8 ,hotDrinks9));
 
-        // maschine.addDrink((HotDrink) cappuccino);
-        // maschine.addDrink((HotDrink) americano);
-        maschine.addDrink((HotDrink) latte);
+        Drinks.initProduct(hotDrinksList);
 
-        maschine.getProduct((HotDrink) cappuccino);
-        maschine.getProduct((HotDrink) americano);
-        maschine.getProduct((HotDrink) latte);
+        System.out.println("Поиск по названию: " + Drinks.getProduct("шоколад").replace("[", "").replace("]", ""));
+        System.out.println("█".repeat(50));
+
+        System.out.println("Поиск по цене: " + Drinks.getProductPrice(80).replace("[", "").replace("]", ""));
+        System.out.println("█".repeat(50));
+
+        System.out.println("Поиск по температуре: " + Drinks.getProduct(70).replace("[", "").replace("]", ""));
+        System.out.println("█".repeat(50));
+
+        view.createGroup(new Group
+                (new ArrayList<>
+                        (List.of(hotDrinks1,
+                                hotDrinks2,
+                                hotDrinks3,
+                                hotDrinks4)),
+                        new Authomat("Автомат", "Горячие_напитки", "кофейня"), 10));
+
+        view.createGroup(new Group
+                (new ArrayList<>
+                        (List.of(hotDrinks5,
+                                hotDrinks6,
+                                hotDrinks7,
+                                hotDrinks8,
+                                hotDrinks9)),
+                        new Authomat("Автомат",  "Теплые_напитки", "кофейня"), 11));
+        view.createDrinks(10, "чай", 150, 450, 70, 10);
+        System.out.println(view);
 
     }
 }
